@@ -1,4 +1,8 @@
 groups:
+  - name: custom_rule
+    rules:
+      - record: node_filesystem_freemem
+        expr: 100*node_filesystem_free_bytes{mountpoint="/"}/node_filesystem_size_bytes{mountpoint="/"} 
   - name: example_alert
     rules:
       - alert: InstanceDown
